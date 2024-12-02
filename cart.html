@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone - Cart</title>
+    <link rel="stylesheet" href="cartstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Navbar and Filter -->
+    <header>
+        <div class="nav-bar">
+            <div class="nav-left">
+                <a href="index.html"><img src="images/logo -edit.gif" alt="Amazon Logo" class="amazon-logo"></a>
+                <div class="delivery-info">
+                    <span>Deliver to</span>
+                    <strong id="location">Your Location</strong>
+                    <button onclick="changeLocation()">Update location</button>
+                </div>
+            </div>
+            <div class="search-bar">
+                <select>
+                    <option value="all">All</option>
+                </select>
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <div class="nav-right">
+                <span class="account-info"><a href="login.html">Sign in</a></span>
+                <span class="cart"><a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i> Cart
+                    <span class="cart-count">0</span>
+                </a></span>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <nav class="filter-section">
+            <ul>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="home.html">Home Appliances</a></li>
+                <li><a href="beauty.html">Beauty</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="samsung.html">Samsung</a></li>
+                <li><a href="apple.html">Apple</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Your Cart</h2>
+        <div id="cart-items" class="product-grid">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div id="cart-summary">
+            <p id="total-price">Total: $0.00</p>
+            <button id="purchase-all-button">Purchase All</button>
+            
+        </div>
+    </main>
+
+    
+
+    <script>
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function loadCart() {
+    const cartDiv = document.getElementById("cart-items");
+    const totalPriceDiv = document.getElementById("total-price");
+    let totalPrice = 0;
+
+    // Clear the cart container to prevent duplicates
+    cartDiv.innerHTML = "";
+
+    if (cartItems.length === 0) {
+        cartDiv.innerHTML = "<p>Your cart is empty.</p>";
+        totalPriceDiv.textContent = `Total: $0.00`;
+        document.querySelector('.cart-count').textContent = "0";
+        return;
+    }
+
+    cartItems.forEach((item, index) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "product";
+        itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" class="product-image">
+            <h3>${item.name}</h3>
+            <p>$${item.price.toFixed(2)}</p>
+            <button onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartDiv.appendChild(itemDiv);
+        totalPrice += item.price;
+    });
+
+    totalPriceDiv.textContent = `Total: $${totalPrice.toFixed(2)}`;
+    document.querySelector('.cart-count').textContent = cartItems.length;
+}
+
+
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+            loadCart();
+        }
+
+
+        // Simulate the purchase of all items in the cart
+function purchaseAll() {
+    if (cartItems.length === 0) {
+        alert("Your cart is empty! Please add items to proceed.");
+        return;
+    }
+
+    // Simulate saving the order to a local database or API
+    const orderDetails = {
+        items: cartItems,
+        total: cartItems.reduce((sum, item) => sum + item.price, 0),
+        date: new Date().toLocaleString(),
+    };
+
+    // Save the order details in localStorage (mocking a database)
+    let orders = JSON.parse(localStorage.getItem("orders")) || [];
+    orders.push(orderDetails);
+    localStorage.setItem("orders", JSON.stringify(orders));
+
+    // Clear the cart after purchase
+    cartItems.length = 0;
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+
+    // Show confirmation and redirect to an order confirmation page
+    alert("Thank you for your purchase! Your order has been placed.");
+    window.location.href = "order-confirmation.html"; // Redirect to confirmation
+}
+
+// Attach the purchase function to the button
+document.getElementById("purchase-all-button").addEventListener("click", purchaseAll);
+
+
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+
+
+
+        header {
+    background-color: black;
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.amazon-logo {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.delivery-info {
+    margin-left: 15px;
+}
+
+.delivery-info span {
+    font-size: 14px;
+}
+
+.delivery-info button {
+    background: none;
+    border: none;
+    color: #febd69;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar input {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.search-bar button {
+    background-color: #febd69;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    color: #333;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+}
+
+.cart-count {
+    background-color: #febd69;
+    padding: 2px 6px;
+    border-radius: 50%;
+    color: black;
+    font-size: 12px;
+}
+
+/* Filter Section Styles */
+.filter-section {
+    background-color: white;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.filter-section ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-section li {
+    margin: 0 15px;
+}
+
+.filter-section a {
+    text-decoration: none;
+    font-size: 16px;
+    color:black;
+    font-weight: 600;
+}
+
+.filter-section a:hover {
+    color: orange;
+}
+
+
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #e53935;
+            margin: 10px 0;
+        }
+
+        .product button {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="nav-left">
+                <a href="index.html"><img src="images/logo -edit.gif" alt="Amazon Logo" class="amazon-logo"></a>
+                <div class="delivery-info">
+                    <span>Deliver to</span>
+                    <strong id="location">Your Location</strong>
+                    <button onclick="changeLocation()">Update location</button>
+                </div>
+            </div>
+    
+            <div class="search-bar">
+                <select>
+                    <option value="all">All</option>
+                </select>
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+    
+            <div class="nav-right">
+                <a href="login.html">Sign in</a>
+                <div class="cart">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="filter-section">
+            <ul>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="home.html">Home Appliances</a></li>
+                <li><a href="beauty.html">Beauty</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="samsung.html">Samsung</a></li>
+                <li><a href="apple.html">Apple</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    
+
+    <main>
+        <section class="product-grid">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fb9%2Fd2%2Fb9d28332f1fa4098f01ed9e54b4393d4a9a9e4fe.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]" alt="Product 1" class="product-image">
+                <h3 class="product-title">slim fit jeans</h3>
+                <p class="product-price">₹2,499 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="https://fortcollins.co.in/cdn/shop/files/fort-collins-men-white-structured-cotton-lycra-graphic-t-shirt-7866ts-1.webp?v=1725283438&width=2048" alt="Product 2" class="product-image">
+                <h3 class="product-title">Graphic T-Shirt</h3>
+                <p class="product-price">₹24,999 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="https://devotedstore.com/cdn/shop/files/1000047445.jpg?v=1720451770">
+                <h3 class="product-title">Leather Jacket</h3>
+                <p class="product-price">₹1,299 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="https://redtape.com/cdn/shop/products/8-800x800_22c88bd9-f9c2-4c61-ab55-71edce92bf57.jpg?v=1728477061">
+                <h3 class="product-title">Sneakers</h3>
+                <p class="product-price">₹1,299 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="https://sassafras.in/cdn/shop/files/SFDRSS1811-6_7f2cce7b-59a3-4997-82de-4fb0e13ee7f0_1800x.jpg?v=1720264435" alt="Product 5" class="product-image">
+                <h3 class="product-title">Floral Dress</h3>
+                <p class="product-price">₹1,999 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc1%2Fcf%2Fc1cfe682a63f511a89b90db7e7f3bc33617a4d29.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]" alt="Product 6" class="product-image">
+                <h3 class="product-title">Hoodie</h3>
+                <p class="product-price">₹89,999 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="https://image4.cdnsbg.com/1/14/52167_1704246042716.jpg" alt="Product 7" class="product-image">
+                <h3 class="product-title">Ray-Ban Sunglasses</h3>
+                <p class="product-price">₹6,499 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 8 -->
+            <div class="product">
+                <img src="https://www.voganow.com/cdn/shop/files/VNLFB-792-SUD-01-ZP-SL_1.jpg?v=1688202554" alt="Product 8" class="product-image">
+                <h3 class="product-title">Ankle Boots</h3>
+                <p class="product-price">₹1,199 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    
+
+<script>
+    function changeLocation() {
+        document.getElementById('location').innerText = prompt('Enter your new location:');
+    }
+      function changeLocation() {
+        const newLocation = prompt("Enter your new location:");
+        if (newLocation) {
+            document.getElementById('location').innerText = newLocation;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

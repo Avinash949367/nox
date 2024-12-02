@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="cartstyle.css">
+</head>
+<body>
+    <header>
+        <h1>Order Confirmation</h1>
+    </header>
+    <main>
+        <h2>Thank you for your purchase!</h2>
+        <div id="order-details">
+            <!-- Order details will be dynamically added here -->
+        </div>
+        <button onclick="goBackToShopping()">Continue Shopping</button>
+    </main>
+    <footer>
+        <p>Amazon Clone © 2024</p>
+    </footer>
+
+    <script>
+        function loadOrderDetails() {
+            const orders = JSON.parse(localStorage.getItem("orders")) || [];
+            const lastOrder = orders[orders.length - 1]; // Get the most recent order
+
+            if (!lastOrder) {
+                document.getElementById("order-details").innerHTML = "<p>No recent orders found.</p>";
+                return;
+            }
+
+            const orderHTML = `
+                <h3>Order Summary</h3>
+                <ul>
+                    ${lastOrder.items.map(item => `<li>${item.name} - $${item.price.toFixed(2)}</li>`).join("")}
+                </ul>
+                <p><strong>Total:</strong> $${lastOrder.total.toFixed(2)}</p>
+                <p><strong>Date:</strong> ${lastOrder.date}</p>
+            `;
+            document.getElementById("order-details").innerHTML = orderHTML;
+        }
+
+        function goBackToShopping() {
+            window.location.href = "index.html"; // Redirect to the homepage
+        }
+
+        window.onload = loadOrderDetails;
+    </script>
+</body>
+</html>

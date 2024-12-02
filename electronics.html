@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+
+
+
+        header {
+    background-color: black;
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.amazon-logo {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.delivery-info {
+    margin-left: 15px;
+}
+
+.delivery-info span {
+    font-size: 14px;
+}
+
+.delivery-info button {
+    background: none;
+    border: none;
+    color: #febd69;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar input {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.search-bar button {
+    background-color: #febd69;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    color: #333;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+}
+
+.cart-count {
+    background-color: #febd69;
+    padding: 2px 6px;
+    border-radius: 50%;
+    color: black;
+    font-size: 12px;
+}
+
+/* Filter Section Styles */
+.filter-section {
+    background-color: white;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.filter-section ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-section li {
+    margin: 0 15px;
+}
+
+.filter-section a {
+    text-decoration: none;
+    font-size: 16px;
+    color:black;
+    font-weight: 600;
+}
+
+.filter-section a:hover {
+    color: orange;
+}
+
+
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #e53935;
+            margin: 10px 0;
+        }
+
+        .product button {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="nav-left">
+                <a href="index.html"><img src="images/logo -edit.gif" alt="Amazon Logo" class="amazon-logo"></a>
+                <div class="delivery-info">
+                    <span>Deliver to</span>
+                    <strong id="location">Your Location</strong>
+                    <button onclick="changeLocation()">Update location</button>
+                </div>
+            </div>
+    
+            <div class="search-bar">
+                <select>
+                    <option value="all">All</option>
+                </select>
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+    
+            <div class="nav-right">
+                <a href="login.html">Sign in</a>
+                <div class="cart">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="filter-section">
+            <ul>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="home.html">Home Appliances</a></li>
+                <li><a href="beauty.html">Beauty</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="samsung.html">Samsung</a></li>
+                <li><a href="apple.html">Apple</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    
+
+    <main>
+        <section class="product-grid">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="https://www.boat-lifestyle.com/cdn/shop/products/main2_b66dce6b-710d-49cb-9d1c-2bc8c9c0ab15_600x.png?v=1645698328" alt="Product 1" class="product-image">
+                <h3 class="product-title">Wireless Bluetooth Headphones</h3>
+                <p class="product-price">₹2,499 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="https://compaq.com.in/wp-content/uploads/2022/10/1-11.jpg" alt="Product 2" class="product-image">
+                <h3 class="product-title">Smart LED TV 43"</h3>
+                <p class="product-price">₹24,999 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="https://www.jiomart.com/images/product/original/rvj2wpbwdj/portronics-sound-drum-p-20w-portable-bluetooth-speaker-black-por-1578-product-images-orvj2wpbwdj-p593796316-0-202209160139.jpg?im=Resize=(420,420)" alt="Product 3" class="product-image">
+                <h3 class="product-title">Portable Bluetooth Speaker</h3>
+                <p class="product-price">₹1,299 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/61VxzkiD1EL.jpg" alt="Product 4" class="product-image">
+                <h3 class="product-title">Smartphone (128GB)</h3>
+                <p class="product-price">₹19,499 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="https://vividkart.com/wp-content/uploads/2024/09/M4-Smart-Band-for-Track-Heart-Rate-Step-Track-with-OLED-Diplay.jpg" alt="Product 5" class="product-image">
+                <h3 class="product-title">Fitness Band</h3>
+                <p class="product-price">₹1,999 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1724857686/Croma%20Assets/Computers%20Peripherals/Laptop/Images/306661_0_lxgkgl.png" alt="Product 6" class="product-image">
+                <h3 class="product-title">Gaming Laptop</h3>
+                <p class="product-price">₹89,999 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="https://robu.in/wp-content/uploads/2024/04/Hawkeye-Firefly-X-4K-60-FPS-Action-Camera-170-Degree-Lens-1.jpg" alt="Product 7" class="product-image">
+                <h3 class="product-title">4K Action Camera</h3>
+                <p class="product-price">₹6,499 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            <!-- Product 8 -->
+            <div class="product">
+                <img src="https://www.wonderchef.com/cdn/shop/products/Lifestyle_5864da56-9946-4754-a453-d116c606b810_1024x1024.jpg?v=1667978085" alt="Product 8" class="product-image">
+                <h3 class="product-title">Electric Kettle</h3>
+                <p class="product-price">₹1,199 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    
+
+<script>
+    function changeLocation() {
+        document.getElementById('location').innerText = prompt('Enter your new location:');
+    }
+      function changeLocation() {
+        const newLocation = prompt("Enter your new location:");
+        if (newLocation) {
+            document.getElementById('location').innerText = newLocation;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

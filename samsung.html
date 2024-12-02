@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+
+
+
+        header {
+    background-color: black;
+    color: white;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.amazon-logo {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.delivery-info {
+    margin-left: 15px;
+}
+
+.delivery-info span {
+    font-size: 14px;
+}
+
+.delivery-info button {
+    background: none;
+    border: none;
+    color: #febd69;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar input {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.search-bar button {
+    background-color: #febd69;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    color: #333;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+}
+
+.cart-count {
+    background-color: #febd69;
+    padding: 2px 6px;
+    border-radius: 50%;
+    color: black;
+    font-size: 12px;
+}
+
+/* Filter Section Styles */
+.filter-section {
+    background-color: white;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+.filter-section ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-section li {
+    margin: 0 15px;
+}
+
+.filter-section a {
+    text-decoration: none;
+    font-size: 16px;
+    color:black;
+    font-weight: 600;
+}
+
+.filter-section a:hover {
+    color: orange;
+}
+
+
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 16px;
+            color: #e53935;
+            margin: 10px 0;
+        }
+
+        .product button {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="nav-left">
+                <a href="index.html"><img src="images/logo -edit.gif" alt="Amazon Logo" class="amazon-logo"></a>
+                <div class="delivery-info">
+                    <span>Deliver to</span>
+                    <strong id="location">Your Location</strong>
+                    <button onclick="changeLocation()">Update location</button>
+                </div>
+            </div>
+    
+            <div class="search-bar">
+                <select>
+                    <option value="all">All</option>
+                </select>
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+    
+            <div class="nav-right">
+                <a href="login.html">Sign in</a>
+                <div class="cart">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="filter-section">
+            <ul>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="home.html">Home Appliances</a></li>
+                <li><a href="beauty.html">Beauty</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="samsung.html">Samsung</a></li>
+                <li><a href="apple.html">Apple</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    
+
+    <main>
+        <!--<section class="product-grid">
+            
+            <div class="product">
+                <img src="https://images-cdn.ubuy.co.in/65fd379bee5ed11eeb02f409-balancefrom-all-purpose-1-2-in-high.jpg" alt="Product 1" class="product-image">
+                <h3 class="product-title">Yoga Mat</h3>
+                <p class="product-price">₹2,499 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+           
+            <div class="product">
+                <img src="data:image/jpeg;base64,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" alt="Product 2" class="product-image">
+                <h3 class="product-title">Dumbbell Set</h3>
+                <p class="product-price">₹24,999 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+           
+            <div class="product">
+                <img src="https://contents.mediadecathlon.com/p2606718/eccde2c55be4eeae078f19b0f920fca1/p2606718.jpg?format=auto&quality=70&f=2520x0">
+                <h3 class="product-title">Football</h3>
+                <p class="product-price">₹1,299 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+    
+            
+            <div class="product">
+                <img src="https://nwscdn.com/media/catalog/product/cache/h700xw700/v/e/vermont-colt-is-a-tennis-racket-for-all-ages-to-enjoy_1.jpg">
+                <h3 class="product-title">Tennis Rocket</h3>
+                <p class="product-price">₹1,299 <span class="original-price"></span></p>
+                <button>Add to Cart</button>
+            </div>
+        </section> -->
+
+        <center><h1> SORRY !</h1>
+        <p>No Data Found </p></center>
+    </main>
+    
+
+<script>
+    function changeLocation() {
+        document.getElementById('location').innerText = prompt('Enter your new location:');
+    }
+      function changeLocation() {
+        const newLocation = prompt("Enter your new location:");
+        if (newLocation) {
+            document.getElementById('location').innerText = newLocation;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

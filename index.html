@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="nav-left">
+                <a href="index.html"><img src="images/logo -edit.gif" alt="Amazon Logo" class="amazon-logo"></a>
+                <div class="delivery-info">
+                    <span>Deliver to</span>
+                    <strong id="location">Your Location</strong>
+                    <button onclick="changeLocation()">Update location</button>
+                </div>
+            </div>
+            <div class="search-bar">
+                <select>
+                    <option value="all">All</option>
+                </select>
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <div class="nav-right">
+                <span class="account-info"><a href="login.html">
+                    Sign in</span>
+                </a>
+                <span class="cart"><a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i> Cart
+                    <span class="cart-count">0</span></span>
+                </a></div>
+            </div>
+        </div>
+
+
+
+
+
+       <nav class="filter-section">
+            <ul>
+                <li><a href="electronics.html">Electronics</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="home.html">Home Appliances</a></li>
+                <li><a href="beauty.html">Beauty</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="samsung.html">Samsung</a></li>
+                <li><a href="apple.html">Apple</a></li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <main>
+
+
+
+
+
+
+        <!-- Promotional Section -->
+<!-- Promotional Section (with images only, no text) -->
+<section class="promo-section">
+    <div class="promo-images">
+        <img src="https://via.placeholder.com/1200x300?text=Offer+1" alt="Offer 1" class="promo-img">
+    </div>
+</section>
+
+
+
+
+
+<div class="deals">
+        <h2>Deals of the Day</h2>
+        <div id="product-list" class="product-grid"></div>
+        </div>
+
+        <div class="best-deals">
+            <h2>
+                Best deals curated from stores nearby 
+                <a href="all-offers.html" class="see-all-link">See all offers</a>
+            </h2>
+            <div class="carousel">
+                <button class="carousel-control prev" onclick="scrollCarousel(-1)">&#10094;</button>
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="images/pexels-faheem-ahamad-422934800-16814682.jpg" alt="Deal 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pexels-hazardos-1306248.jpg" alt="Deal 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pexels-robert-bogdan-156165-691120.jpg" alt="Deal 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/pexels-yogendras31-1760900.jpg" alt="Deal 7">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://m.media-amazon.com/images/I/41yo2hR9ZOL._AC_SY200_.jpg" alt="Deal 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://m.media-amazon.com/images/I/61NAmQH1J9L._AC_SY200_.jpg" alt="Deal 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://m.media-amazon.com/images/I/71Nc4q+8BdL._AC_SY200_.jpg" alt="Deal 3">
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/150x250?text=Deal+8" alt="Deal 8">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/150x250?text=Deal+9" alt="Deal 9">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/150x250?text=Deal+10" alt="Deal 10">
+                    </div>
+                </div>
+                <button class="carousel-control next" onclick="scrollCarousel(1)">&#10095;</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <img src="https://starwork.in/cdn/shop/products/30_5eef967d-b3c6-4bbf-b659-e4eb21ccceab_390x390.jpg?v=1662097211" alt="Product Image" class="product-image">
+            <div class="product-details">
+                <div class="product-title">STAR WORK Table for Computer Desktop</div>
+                <div class="product-rating">
+                    <span>⭐</span><span>3.8</span>
+                    <span>(1,988 reviews)</span>
+                </div>
+                <div class="product-price">
+                    ₹2,983
+                    <span class="original-price">₹4,999</span>
+                </div>
+                <div class="deal-tag">Black Friday Deal</div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Amazon Clone © 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

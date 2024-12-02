@@ -1,0 +1,189 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Light gray background for the whole page */
+    color: #333; /* Dark text color */
+}
+
+/* Header styling */
+header {
+    background-color: #232f3e; /* Cart Header color */
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Navigation bar inside the header */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling for the left section of the nav */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Amazon logo inside the nav */
+.amazon-logo {
+    width: 100px;
+    margin-right: 10px;
+}
+
+/* Button in delivery info */
+.delivery-info button {
+    background: none;
+    border: none;
+    color: #febd69; /* Yellowish color for buttons */
+    cursor: pointer;
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+/* Search input box */
+.search-bar input {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+/* Search button */
+.search-bar button {
+    background-color: #febd69; /* Yellowish button color */
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Right section of the nav (sign-in and cart) */
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+/* Cart item count badge */
+.cart-count {
+    background-color: #febd69; /* Yellowish color for cart count */
+    padding: 2px 6px;
+    border-radius: 50%;
+    color: black;
+}
+
+/* Filter Section styling */
+.filter-section {
+    background-color: #232f3e; /* Same as header color */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.filter-section ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-section li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.filter-section a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.filter-section a:hover {
+    color: #febd69; /* Hover color to match button color */
+}
+
+/* Main content section */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cart items grid */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Individual product card */
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 200px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Product name */
+.product h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Product price */
+.product p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Product button */
+.product button {
+    background-color: #ff9900; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Cart summary section */
+#cart-summary {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Checkout button */
+#purchase-all-button{
+    background-color: #ff9900;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Footer section */
+footer {
+    background-color: #232f3e; /* Footer color */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain; /* Ensures the image fits within the box without distortion */
+    margin-bottom: 10px; /* Adds some spacing below the image */
+    border: 1px solid #ddd; /* Optional: Adds a border around the image */
+    border-radius: 4px; /* Optional: Makes the edges rounded */
+}
